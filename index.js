@@ -10,7 +10,8 @@ const app = express();
  app.use(cors());
  app.use(express.json());
  app.use(userRoutes);
-app.listen(8080,async() => {
+
+ app.listen(8080,async() => {
     try{
         await connect;
         console.log("App is connect with mongodb");
