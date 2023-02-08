@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require("cors");
+const mongoose = require("mongoose");
+mongoose.set("strictQuery",false);
 
 const {connect} = require("./config/mongodb")
 const {userRoutes} = require("./routes/user.routes")
@@ -8,7 +10,6 @@ const app = express();
  app.use(cors());
  app.use(express.json());
  app.use(userRoutes);
-
 app.listen(8080,async() => {
     try{
         await connect;
