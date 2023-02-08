@@ -28,9 +28,9 @@ userRoutes.post("/register", async (req, res) => {
 
     try {
       await newUser.save();
-      res.send({ msg: "User registered successfully" });
+      res.send({ "msg": "User registered successfully" });
     } catch (err) {
-      return res.status(500).send({ msg: "Internal server error" });
+      return res.status(500).send({ "msg": "Internal server error in catch" });
     }
   });
 });
