@@ -16,7 +16,7 @@ userRoutes.post("/register", async (req, res) => {
     return res.status(400).send({ "msg": "User alreday registered" });
   }
 
-  bcrypt.hash(password, 4, async(err,hash) => {
+  bcrypt.hash(password, process.env.salt_number, async(err,hash) => {
     if (err) {
       return res.status(500).send({ "msg": "Internal server error" });
     }
